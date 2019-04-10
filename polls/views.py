@@ -5,8 +5,10 @@ from .models import Question
 
 def index(request):
 	latest_questions= Question.objects.order_by('-pub_date')[:5]
-	output = '\n'.join(q.question_text for q in latest_questions)
-	return HttpResponse(output,content_type='text/plain')
+	#template = loader.get_template('polls/index.html')
+	#context=RequestContext(request, {'latest_questions': latest_questions})
+	#return HttpResponse(template.render(context.flatten()))
+	return render(request,'polls/index.html',{'latest_questions':latest_questions})
 
 
 def detail(request, question_id):
