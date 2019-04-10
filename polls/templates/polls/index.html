@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends './base.html' %}
 
+
+{%  block body  %}
 {%  if latest_questions  %}
 	<ul>
 		{%  for question in latest_questions      %}
@@ -13,5 +13,4 @@
  	<p> You don't have any questions. </p>
 {% endif %}
 
-</body>
-</html>
+{%  endblock    %}
