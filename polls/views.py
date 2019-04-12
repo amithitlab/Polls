@@ -16,7 +16,7 @@ def detail(request, question_id):
 def result(request, question_id):
 	question= get_object_or_404(Question, pk=question_id)
 	return render(request, 'polls/result.html',{'question':question})
-	return HttpResponse(result)
+	
 
 def vote(request, question_id):
 	question= get_object_or_404(Question,pk=question_id)
